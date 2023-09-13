@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and text color for the entire page */
+body {
+    background-color: #f2f2f2;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #004080;
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Search bar styles */
+.search-bar {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.recipe-card {
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.recipe-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.recipe-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.recipe-nutrition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-nutrition-label {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.circular-bar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: conic-gradient(#007bff 0% 25%, transparent 25% 100%);
+    background-size: 50% 100%;
+    margin-top: 5px;
+}
+
+.order-now-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #004080;
+    color: #fff;
+    padding: 10px;
+}
+
+    </style>
+    <title>Recipe App</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" id="recipe-link">Recipe</a></li>
+                <li><a href="#" id="calorie-link">Calorie</a></li>
+                <li><a href="#" id="diet-link">Diet</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    </main>
+    <footer>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const recipeLink = document.getElementById('recipe-link');
+    const calorieLink = document.getElementById('calorie-link');
+    const dietLink = document.getElementById('diet-link');
+    const logoutLink = document.getElementById('logout-link');
+    const mainContent = document.querySelector('main');
+
+    function loadRecipeScreen() {
+    }
+
+    function loadCalorieScreen() {
+        // Create a search bar, list of recipes based on calorie input, and order now buttons dynamically
+        // Attach event listeners for the order now buttons
+    }
+
+    // Function to load diet screen content
+    function loadDietScreen() {
+        // Create options for the user to select diet preferences
+        // Based on user selection, fetch and display recipes dynamically
+    }
+
+    // Event listeners for navigation links
+    recipeLink.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        loadRecipeScreen();
+    });
+
+    calorieLink.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        loadCalorieScreen();
+    });
+
+    dietLink.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        loadDietScreen();
+    });
+
+    logoutLink.addEventListener('click', () => {
+        // Handle logout functionality here
+    });
+
+    // Initial screen load
+    loadRecipeScreen();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const recipeButton = document.getElementById('recipe-button');
+    const calorieButton = document.getElementById('calorie-button');
+    const dietButton = document.getElementById('diet-button');
+    const logoutButton = document.getElementById('logout-button');
+    const content = document.querySelector('.content');
+
+    // Function to fetch and display recipes
+    function fetchRecipes(query) {
+        // Make an API request to fetch recipes based on the query
+        // Use the EDAMAM API mentioned in the provided documentation
+
+        // Once you get the data, dynamically create and append recipe cards to the content div
+    }
+
+    // Function to handle expanding recipe cards on click
+    function expandRecipeCard() {
+        // Toggle the visibility of additional recipe details
+        // Add event listeners for order now buttons to show the notification
+    }
+
+    // Function to show in-app notification
+    function showNotification(message) {
+        // Display the notification to the user
+    }
+
+    // Event listeners for navigation buttons
+    recipeButton.addEventListener('click', () => {
+        // Load the recipe screen here
+    });
+
+    calorieButton.addEventListener('click', () => {
+        // Load the calorie screen here
+    });
+
+    dietButton.addEventListener('click', () => {
+        // Load the diet screen here
+    });
+
+    logoutButton.addEventListener('click', () => {
+        // Handle logout functionality here
+    });
+});
+
+    </script>
+</body>
+</html>

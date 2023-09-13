@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hotel Booking</title>
+</head>
+<body>
+    <header>
+        <h1>Hotel Booking</h1>
+        <input type="text" id="search" placeholder="Search for a hotel...">
+        <style>
+            /* CSS styles go here */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.hotel-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+.hotel-info {
+    text-align: center;
+}
+
+.image-slider {
+    /* Add CSS for auto-sliding images here */
+}
+
+.rating {
+    /* Add CSS for star rating design here */
+}
+
+.reviews {
+    display: none; /* Hidden by default, shown on card click */
+}
+
+footer {
+    text-align: center;
+}
+
+.logout {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+        </style>
+    </header>
+    <main>
+        <div class="hotel-card">
+            <div class="hotel-info">
+                <h2>Hotel Name</h2>
+                <div class="image-slider">
+                    <!-- Auto-sliding images go here -->
+                </div>
+                <p>City: City Name</p>
+                <p>Star: 4</p>
+                <div class="rating">
+                    <!-- Star rating design goes here -->
+                </div>
+                <button class="book-now">Book Now</button>
+            </div>
+            <div class="reviews">
+                <!-- Hotel review comments from API go here (hidden by default) -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button class="logout">Logout</button>
+    </footer>
+    <script src="script.js">document.addEventListener('DOMContentLoaded', function () {
+        const searchLink = document.getElementById('search-link');
+        const logoutLink = document.getElementById('logout-link');
+        const mainContent = document.querySelector('main');
+        const notification = document.getElementById('notification');
+
+        // Sample hotel data (you should fetch this data from an API)
+        const hotels = [
+            {
+                name: 'Sample Hotel 1',
+                images: ['image1.jpg', 'image2.jpg', 'image3.jpg'],
+                city: 'Sample City 1',
+                star: '★★★',
+                rating: 4.5,
+                reviews: ['Review 1', 'Review 2', 'Review 3'],
+            },
+            {
+                name: 'Sample Hotel 2',
+                images: ['image4.jpg', 'image5.jpg', 'image6.jpg'],
+                city: 'Sample City 2',
+                star: '★★★★',
+                rating: 4.7,
+                reviews: ['Review 4', 'Review 5', 'Review 6'],
+            },
+            // Add more hotel objects as needed
+        ];
+
+        // Function to render hotel cards
+        function renderHotelCards() {
+            mainContent.innerHTML = '';
+            hotels.forEach((hotel, index) => {
+                const hotelCard = document.createElement('div');
+                hotelCard.classList.add('hotel-card');
+                hotelCard.innerHTML = `
+                    <div class="hotel-details">
+                        <h2>${hotel.name}</h2>
+                        <div class="image-slider">
+                            <!-- Auto-sliding images go here -->
+                        </div>
+                        <p>City: ${hotel.city}</p>
+                        <p>Star: ${hotel.star}</p>
+                        <p>Rating: ${hotel.rating}</p>
+                        <button class="book-now-button" data-index="${index}">Book Now</button>
+                    </div>
+                    <div class="reviews hidden">
+                        <h3>Reviews:</h3>
+                        <ul>
+                            ${hotel.reviews.map(review => `<li>${review}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+
+                const bookNowButton = hotelCard.querySelector('.book-now-button');
+                const reviewsSection = hotelCard.querySelector('.reviews');
+
+                bookNowButton.addEventListener('click', () => {
+                    // Handle booking logic here
+                    notification.innerText = 'Your booking has been confirmed';
+                    notification.style.display = 'block';
+                });
+
+                hotelCard.addEventListener('click', () => {
+                    // Toggle reviews section visibility on card click
+                    reviewsSection.classList.toggle('hidden');
+                });
+
+                mainContent.appendChild(hotelCard);
+            });
+        }
+
+        renderHotelCards();
+
+        searchLink.addEventListener('click', () => {
+            // Handle hotel search functionality here
+        });
+
+        logoutLink.addEventListener('click', () => {
+            // Handle logout functionality here
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const hotelCards = document.querySelector('.hotel-cards');
+
+    // Function to fetch and display hotels
+    function fetchHotels(query) {
+        // Make an API request to fetch hotels based on the query
+        // Use the API mentioned in the provided documentation
+        // Example: https://fake-hotel-api.herokuapp.com/hotels?name_like=query
+
+        // Once you get the data, dynamically create and append hotel cards to hotelCards div
+    }
+
+    // Event listener for search button
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        if (query !== '') {
+            fetchHotels(query);
+        }
+    });
+
+    // Function to handle expanding hotel cards on click
+    function expandHotelCard() {
+        // Toggle the visibility of hotel review comments
+        // Add event listeners for book now buttons to show the notification
+    }
+
+    // Example: Add event listener to hotel cards
+    hotelCards.addEventListener('click', (event) => {
+        const card = event.target.closest('.hotel-card');
+        if (card) {
+            expandHotelCard(card);
+        }
+    });
+
+    // Function to show in-app notification
+    function showNotification(message) {
+        // Display the notification to the user
+    }
+
+    // Example: Add event listener to book now buttons
+    hotelCards.addEventListener('click', (event) => {
+        const bookNowButton = event.target.closest('.book-now-button');
+        if (bookNowButton) {
+            showNotification('Your booking has been confirmed');
+        }
+    });
+});
+
+</script>
+</body>
+</html>

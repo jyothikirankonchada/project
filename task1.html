@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.navigation {
+    list-style-type: none;
+}
+
+.navigation li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.movie-card img {
+    max-width: 100%;
+}
+
+#movie-details-screen {
+    display: none;
+}
+
+.user-rating {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #ccc;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#" class="active">Movies</a></li>
+                <li><a href="#">Favorites</a></li>
+                <li><a href="#">Watchlist</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Movies Screen -->
+        <div id="movies-screen">
+            <input type="text" id="search" placeholder="Search for movies">
+            <div class="movie-card">
+                <img src="image.img" alt="Movie 1">
+                <h2>Movie 1</h2>
+                <p>Genre: Action</p>
+
+            </div>
+
+        </div>
+
+
+        <div id="favorites-screen">
+
+        </div>
+
+
+        <div id="watchlist-screen">
+
+        </div>
+
+
+        <div id="movie-details-screen">
+            <img src="movie1.jpg" alt="Movie 1">
+            <h2>Movie 1</h2>
+            <p>Description: Lorem ipsum dolor sit amet...</p>
+            <p>Release Date: 2023-09-13</p>
+            <p>Genre: Action</p>
+            <div class="user-rating">
+                <p>User Rating:</p>
+                <div class="progress-bar">
+                </div>
+            </div>
+            <button id="play-button">Play Now</button>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const moviesLink = document.getElementById('movies-link');
+    const favoritesLink = document.getElementById('favorites-link');
+    const watchlistLink = document.getElementById('watchlist-link');
+    const logoutLink = document.getElementById('logout-link');
+
+    moviesLink.addEventListener('click', () => {
+
+    });
+
+    favoritesLink.addEventListener('click', () => {
+
+    });
+
+    watchlistLink.addEventListener('click', () => {
+
+    });
+
+    logoutLink.addEventListener('click', () => {
+
+    });
+});
+const API_KEY = 'YOUR_TMDB_API_KEY';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const MOVIES_ENDPOINT = '/discover/movie';
+
+
+function fetchMovies() {
+    const url = `${BASE_URL}${MOVIES_ENDPOINT}?api_key=${API_KEY}&sort_by=popularity.desc`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+        })
+        .catch(error => {
+            console.error('Error fetching movies:', error);
+        });
+}
+
+        </script>
+    </main>
+</body>
+</html>
